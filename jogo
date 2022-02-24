@@ -1,0 +1,17 @@
+print ("bem vindo aos jogos mortais")
+
+nu_sec = 42
+
+chute = input("digite um numero:  ")
+
+chute = int(chute)
+
+print ("voce digitou:", chute)
+
+if (nu_sec == chute):
+    print("voce acertou")
+    print("foi bom jogar com voce")
+else:
+    print("voce errou")
+    print("fim de jogo ")
+    print("voce é um pessimo jogador")
