@@ -1,0 +1,21 @@
+def jogar():
+
+    print ("bem vindo aos jogos mortais")
+    print("**********************************")
+
+    palavrasecreta = "banana"
+
+    enforcou = False
+    acertou = False
+
+    while(not enforcou and not acertou):
+
+        chute = input("qual a letra?")
+
+        print("jogando...")
+
+
+    print("fim do jogo")
+
+if(__name__=="__main__"):
+    jogar()
