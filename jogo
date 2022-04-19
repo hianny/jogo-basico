@@ -1,33 +1,59 @@
-print ("bem vindo aos jogos mortais")
+def jogar():
 
-nu_sec = 42
-total = 3
+    import random
 
+    print("******************************")
+    print ("bem vindo aos jogos mortais")
+    print("******************************")
 
-for rodada in range(1, total + 1 ):
-    print("tentativa {} de {}" .format(rodada, total) )
-    chute = input("digite um numero de 1 a 100:  ")
-    chute = int(chute)
-    print ("voce digitou:", chute)
+    nu_sec = round (random.randrange(1 , 101))
 
-    if(chute <1 or chute >100):
-        print("ta de brinqueition with me?")
-        print("vai de novo")
-        continue
+    print("escolha uma dificuldade para o seu jogo")
+    print("(1) facil, (2) medio ou (3) difícil")
 
-    tent = nu_sec == chute
-    voa = chute > nu_sec
-    cai = chute < nu_sec
+    nivel = int(input("escreva o numero do seu nivel: "))
 
-    if (tent):
-        print("voce acertou")
-        print("pelo menos isso")
-        break
+    pontos = 1000
+
+    if (nivel == 1):
+        total = 10
+    elif(nivel == 2):
+        total = 6
     else:
-        print("voce errou")
-        if (voa):
-            print("ta voando mlk")
-        elif(cai):
-            print("do chão não passa")
+        total = 3
 
-print("fim do jogo")
+    for rodada in range(1, total + 1 ):
+        print("tentativa {} de {}" .format(rodada, total) )
+        chute = input("digite um numero de 1 a 100:  ")
+        chute = int(chute)
+        print ("voce digitou:", chute)
+
+        if(chute <1 or chute >100):
+            print("ta de brinqueition with me?")
+            print("vai de novo")
+            continue
+
+        tent = nu_sec == chute
+        voa = chute > nu_sec
+        cai = chute < nu_sec
+
+        if (tent):
+            print("voce acertou e fez {} pontos" .format(pontos) )
+            print("pelo menos isso")
+            break
+        else:
+            pontosperdidos = abs(nu_sec - chute)
+            pontos = pontos - pontosperdidos
+            print("voce errou")
+            if (voa):
+                print("ta voando mlk")
+                if (rodada == total):
+                    print("o numero secreto era {} e voçê fez {}" . format (nu_sec, pontos ))
+            elif(cai):
+                print("do chão não passa")
+                if (rodada == total):
+                    print("o numero secreto era {} e voçê fez {}".format(nu_sec, pontos))
+
+
+    print("fim do jogo")
+
